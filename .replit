@@ -1,3 +1,15 @@
 modules = ["python-3.11"]
 [nix]
 channel = "stable-24_05"
+
+[workflows]
+runButton = "Flask Dev Server"
+
+[[workflows.workflow]]
+name = "Flask Dev Server"
+author = 41168791
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python run.py"
